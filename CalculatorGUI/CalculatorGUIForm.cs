@@ -10,6 +10,7 @@ using System.Windows.Forms;
 /// <summary>
 /// author: Sarah Eubank
 /// creation date: 4/13/2022
+/// last modified: 4/14/2022
 /// program for a GUI calculator that can add, subtract, multiply, divide, square root, log base 10, log variable base, 
 /// variable exponent, find the min and max of two numbers, reverse a string, remove whitespace from a string, find the quadratic roots,
 /// and find the quotient and the remainder of two numbers.
@@ -22,6 +23,7 @@ namespace CalculatorGUI
         string userInput = "";
         string first = "";
         string second = "";
+        string third = "";
         char operation;
         double result = 0;
 
@@ -368,15 +370,6 @@ namespace CalculatorGUI
                     display.Text = result.ToString();
                 }
             }
-            //quadratic roots
-            //FIXME: modify to take three numbers
-            else if (operation == '%')
-            {
-                firstNum = Convert.ToDouble(first);
-                secondNum = Convert.ToDouble(second);
-
-                double discriminant = (secondNum * secondNum);
-            }
 
             //power
             else if (operation == '^')
@@ -506,16 +499,14 @@ namespace CalculatorGUI
         /// <summary>
         /// author: Sarah Eubank
         /// date created: 4/13/2022
-        /// last modified: 4/13/2022
+        /// last modified: 4/14/2022
         /// if the "quad. roots" (the quadratic roots) button is pressed.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void button4_Click(object sender, EventArgs e)
         {
-            operation = '%';
-            first = userInput;
-            userInput = "";
+            
         }
 
         /// <summary>
@@ -539,6 +530,20 @@ namespace CalculatorGUI
             }
 
             display.Text = userInput;
+        }
+
+        /// <summary>
+        /// author: Sarah Eubank
+        /// date created: 4/14/2022
+        /// last modified: 4/14/2022
+        /// a button that inserts spaces into the userInput.
+        /// allows functionality to removed spaces and quadratic roots.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void spaceButton_Click(object sender, EventArgs e)
+        {
+            userInput += ' ';
         }
 
         /// <summary>

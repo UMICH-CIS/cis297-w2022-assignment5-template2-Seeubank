@@ -55,6 +55,7 @@
             this.minmaxButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.powerButton = new System.Windows.Forms.Button();
+            this.spaceButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // plusButton
@@ -300,7 +301,7 @@
             // reverseButton
             // 
             this.reverseButton.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.reverseButton.Location = new System.Drawing.Point(18, 70);
+            this.reverseButton.Location = new System.Drawing.Point(138, 69);
             this.reverseButton.Name = "reverseButton";
             this.reverseButton.Size = new System.Drawing.Size(109, 49);
             this.reverseButton.TabIndex = 39;
@@ -311,7 +312,7 @@
             // removeSpaceButton
             // 
             this.removeSpaceButton.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.removeSpaceButton.Location = new System.Drawing.Point(158, 70);
+            this.removeSpaceButton.Location = new System.Drawing.Point(253, 68);
             this.removeSpaceButton.Name = "removeSpaceButton";
             this.removeSpaceButton.Size = new System.Drawing.Size(135, 49);
             this.removeSpaceButton.TabIndex = 40;
@@ -333,9 +334,9 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(328, 70);
+            this.button1.Location = new System.Drawing.Point(18, 69);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 49);
+            this.button1.Size = new System.Drawing.Size(111, 49);
             this.button1.TabIndex = 42;
             this.button1.Text = "quotient remainder";
             this.button1.UseVisualStyleBackColor = false;
@@ -352,11 +353,23 @@
             this.powerButton.UseVisualStyleBackColor = false;
             this.powerButton.Click += new System.EventHandler(this.powerButton_Click);
             // 
+            // spaceButton
+            // 
+            this.spaceButton.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.spaceButton.Location = new System.Drawing.Point(398, 69);
+            this.spaceButton.Name = "spaceButton";
+            this.spaceButton.Size = new System.Drawing.Size(62, 47);
+            this.spaceButton.TabIndex = 44;
+            this.spaceButton.Text = "space";
+            this.spaceButton.UseVisualStyleBackColor = false;
+            this.spaceButton.Click += new System.EventHandler(this.spaceButton_Click);
+            // 
             // CalculatorGUIForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(473, 375);
+            this.Controls.Add(this.spaceButton);
             this.Controls.Add(this.powerButton);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.minmaxButton);
@@ -421,6 +434,7 @@
         private System.Windows.Forms.Button minmaxButton;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button powerButton;
+        private System.Windows.Forms.Button spaceButton;
     }
 }
 
