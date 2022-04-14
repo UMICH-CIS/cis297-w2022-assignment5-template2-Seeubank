@@ -13,7 +13,6 @@ using System.Windows.Forms;
 /// program for a GUI calculator that can add, subtract, multiply, divide, square root, log base 10, log variable base, 
 /// variable exponent, find the min and max of two numbers, reverse a string, remove whitespace from a string, find the quadratic roots,
 /// and find the quotient and the remainder of two numbers.
-/// User must push the "C" (clear) button between each function.
 /// </summary>
 
 namespace CalculatorGUI
@@ -260,8 +259,8 @@ namespace CalculatorGUI
         /// <summary>
         /// author: Sarah Eubank
         /// date created: 4/13/2022
-        /// last modified: 4/13/2022
-        /// if the "=" (the equal) button is pressed. program calculates the numbers
+        /// last modified: 4/14/2022
+        /// if the "=" (the equal) button is pressed. program preforms the operation
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -273,52 +272,101 @@ namespace CalculatorGUI
             //addition
             if (operation == '+')
             {
-                firstNum = Convert.ToDouble(first);
-                secondNum = Convert.ToDouble(second);
-                result = firstNum + secondNum;
-                display.Text = result.ToString();
+                if (result != 0)
+                {
+                    firstNum = result;
+                    secondNum = Convert.ToDouble(second);
+                    result = firstNum + secondNum;
+                    display.Text = result.ToString();
+                }
+                else
+                {
+                    firstNum = Convert.ToDouble(first);
+                    secondNum = Convert.ToDouble(second);
+                    result = firstNum + secondNum;
+                    display.Text = result.ToString();
+                }
             }
             //subtraction
             else if (operation == '-')
             {
-                firstNum = Convert.ToDouble(first);
-                secondNum = Convert.ToDouble(second);
-                result = firstNum - secondNum;
-                display.Text = result.ToString();
+                if (result != 0)
+                {
+                    firstNum = result;
+                    secondNum = Convert.ToDouble(second);
+                    result = firstNum - secondNum;
+                    display.Text = result.ToString();
+                }
+                else
+                {
+                    firstNum = Convert.ToDouble(first);
+                    secondNum = Convert.ToDouble(second);
+                    result = firstNum - secondNum;
+                    display.Text = result.ToString();
+                }
             }
             //multiplication
             else if (operation == '*')
             {
-                firstNum = Convert.ToDouble(first);
-                secondNum = Convert.ToDouble(second);
-                result = firstNum * secondNum;
-                display.Text = result.ToString();
+                if (result != 0)
+                {
+                    firstNum = result;
+                    secondNum = Convert.ToDouble(second);
+                    result = firstNum * secondNum;
+                    display.Text = result.ToString();
+                }
+                else
+                {
+                    firstNum = Convert.ToDouble(first);
+                    secondNum = Convert.ToDouble(second);
+                    result = firstNum * secondNum;
+                    display.Text = result.ToString();
+                }
             }
             //division
             else if (operation == '/')
             {
-                firstNum = Convert.ToDouble(first);
-                secondNum = Convert.ToDouble(second);
-
-                //can't divide by 0
-                if (secondNum == 0)
+                if (result != 0)
                 {
-                    display.Text = "Divide by 0 error.";
+                    firstNum = result;
+                    secondNum = Convert.ToDouble(second);
+                    result = firstNum / secondNum;
+                    display.Text = result.ToString();
                 }
                 else
                 {
-                    result = firstNum / secondNum;
-                    display.Text = result.ToString();
+                    firstNum = Convert.ToDouble(first);
+                    secondNum = Convert.ToDouble(second);
+
+                    //can't divide by 0
+                    if (secondNum == 0)
+                    {
+                        display.Text = "Divide by 0 error.";
+                    }
+                    else
+                    {
+                        result = firstNum / secondNum;
+                        display.Text = result.ToString();
+                    }
                 }
             }
             //logx
             else if (operation == '$')
             {
-                firstNum = Convert.ToDouble(first);
-                secondNum = Convert.ToDouble(second);
-
-                result = Math.Log(firstNum, secondNum);
-                display.Text = result.ToString();
+                if (result != 0)
+                {
+                    firstNum = result;
+                    secondNum = Convert.ToDouble(second);
+                    result = Math.Log(firstNum, secondNum);
+                    display.Text = result.ToString();
+                }
+                else
+                {
+                    firstNum = Convert.ToDouble(first);
+                    secondNum = Convert.ToDouble(second);
+                    result = Math.Log(firstNum, secondNum);
+                    display.Text = result.ToString();
+                }
             }
             //quadratic roots
             //FIXME: modify to take three numbers
@@ -333,34 +381,52 @@ namespace CalculatorGUI
             //power
             else if (operation == '^')
             {
-                firstNum = Convert.ToDouble(first);
-                secondNum = Convert.ToDouble(second);
-
-                result = Math.Pow(firstNum, secondNum);
-                display.Text = result.ToString();
+                if (result != 0)
+                {
+                    firstNum = result;
+                    secondNum = Convert.ToDouble(second);
+                    result = Math.Pow(firstNum, secondNum);
+                    display.Text = result.ToString();
+                }
+                else
+                {
+                    firstNum = Convert.ToDouble(first);
+                    secondNum = Convert.ToDouble(second);
+                    result = Math.Pow(firstNum, secondNum);
+                    display.Text = result.ToString();
+                }
             }
 
             //quotient and remainder
             else if (operation == '&')
             {
-                int dividend = Convert.ToInt32(first);
-                int divisor = Convert.ToInt32(second);
-                int quotient, remainder;
-
-                quotient = Math.DivRem(dividend, divisor, out remainder);
-
-                display.Text = quotient.ToString() + "  Remainder:" + remainder.ToString();
+                int dividend, divisor, quotient, remainder;
+                if (result != 0)
+                {
+                    dividend = Convert.ToInt32(result);
+                    divisor = Convert.ToInt32(second);
+                    quotient = Math.DivRem(dividend, divisor, out remainder);
+                    display.Text = quotient.ToString() + "  Remainder:" + remainder.ToString();
+                }
+                else
+                {
+                    dividend = Convert.ToInt32(first);
+                    divisor = Convert.ToInt32(second);
+                    quotient = Math.DivRem(dividend, divisor, out remainder);
+                    display.Text = quotient.ToString() + "  Remainder:" + remainder.ToString();
+                }
             }
 
             //min max
+            //user must press "C" button (clear) after this operation
             else if (operation == '!')
             {
+                double min, max;
+
                 firstNum = Convert.ToDouble(first);
                 secondNum = Convert.ToDouble(second);
-
-                double min = Math.Min(firstNum, secondNum);
-                double max = Math.Max(firstNum, secondNum);
-
+                min = Math.Min(firstNum, secondNum);
+                max = Math.Max(firstNum, secondNum);
                 display.Text = "Min: " + min.ToString() + "  Max: " + max.ToString();
             }
         }
@@ -368,8 +434,8 @@ namespace CalculatorGUI
         /// <summary>
         /// author: Sarah Eubank
         /// date created: 4/13/2022
-        /// last modified: 4/13/2022
-        /// if the "sqr" (the swuare root) button is pressed.
+        /// last modified: 4/14/2022
+        /// if the "sqr" (the square root) button is pressed.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -379,16 +445,24 @@ namespace CalculatorGUI
             first = userInput;
             userInput = "";
 
-            firstNum = Convert.ToDouble(first);
-            result = Math.Sqrt(firstNum);
-
-            display.Text = result.ToString();
+            if (result != 0)
+            {
+                firstNum = result;
+                result = Math.Sqrt(firstNum);
+                display.Text = result.ToString();
+            }
+            else
+            {
+                firstNum = Convert.ToDouble(first);
+                result = Math.Sqrt(firstNum);
+                display.Text = result.ToString();
+            }
         }
 
         /// <summary>
         /// author: Sarah Eubank
         /// date created: 4/13/2022
-        /// last modified: 4/13/2022
+        /// last modified: 4/14/2022
         /// if the "log10" (the log base 10) button is pressed.
         /// </summary>
         /// <param name="sender"></param>
@@ -399,10 +473,18 @@ namespace CalculatorGUI
             first = userInput;
             userInput = "";
 
-            firstNum = Convert.ToDouble(first);
-            result = Math.Log10(firstNum);
-
-            display.Text = result.ToString();
+            if (result != 0)
+            {
+                firstNum = result;
+                result = Math.Log10(firstNum);
+                display.Text = result.ToString();
+            }
+            else
+            {
+                firstNum = Convert.ToDouble(first);
+                result = Math.Log10(firstNum);
+                display.Text = result.ToString();
+            }
         }
 
         /// <summary>
@@ -439,7 +521,7 @@ namespace CalculatorGUI
         /// <summary>
         /// author: Sarah Eubank
         /// date created: 4/13/2022
-        /// last modified: 4/13/2022
+        /// last modified: 4/14/2022
         /// if the "reverse" (the reverse a string) button is pressed.
         /// can only take one string
         /// </summary>
@@ -450,6 +532,7 @@ namespace CalculatorGUI
             char[] charArray = userInput.ToCharArray();
             Array.Reverse(charArray);
             userInput = "";
+
             foreach (char ch in charArray)
             {
                 userInput += ch;
@@ -461,14 +544,25 @@ namespace CalculatorGUI
         /// <summary>
         /// author: Sarah Eubank
         /// date created: 4/13/2022
-        /// last modified: 4/13/2022
+        /// last modified: 4/14/2022
         /// if the "remove spaces" (the remove whitespace) button is pressed.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void removeSpaceButton_Click(object sender, EventArgs e)
         {
+            char[] charArray = userInput.ToCharArray();
+            userInput = "";
 
+            foreach (char ch in charArray)
+            {
+                if (ch != ' ')
+                {
+                    userInput += ch;
+                }
+            }
+
+            display.Text = userInput;
         }
 
         /// <summary>
