@@ -23,7 +23,6 @@ namespace CalculatorGUI
         string userInput = "";
         string first = "";
         string second = "";
-        string third = "";
         char operation;
         double result = 0;
 
@@ -269,7 +268,7 @@ namespace CalculatorGUI
         private void equalButton_Click(object sender, EventArgs e)
         {
             second = userInput;
-            double firstNum, secondNum;
+            double firstNum, secondNum, thirdNum;
 
             //addition
             if (operation == '+')
@@ -369,6 +368,36 @@ namespace CalculatorGUI
                     result = Math.Log(firstNum, secondNum);
                     display.Text = result.ToString();
                 }
+            }
+
+            //quadratic roots
+            else if (operation == '>')
+            {
+                string[] tokens = userInput.Split(' ');
+                userInput = "";
+
+                if (tokens.Length > 3 || tokens.Length < 1)
+                {
+                    display.Text = "Error, invalid number of entries.";
+                }
+
+                firstNum = Convert.ToDouble(tokens[0]);
+                secondNum = Convert.ToDouble(tokens[1]);
+                thirdNum = Convert.ToDouble(tokens[2]);
+
+                double discriminant = (secondNum * secondNum) - (4 * firstNum * thirdNum);
+                if (discriminant < 0)
+                {
+                    display.Text = "No real quadratic roots.";
+                }
+                else
+                {
+                    double X1 = (-secondNum + Math.Sqrt(discriminant)) / (2 * firstNum);
+                    double X2 = (-secondNum - Math.Sqrt(discriminant)) / (2 * firstNum);
+
+                    display.Text = "First root: " + X1 + "  Second Root: " + X2;
+                }
+
             }
 
             //power
@@ -506,7 +535,9 @@ namespace CalculatorGUI
         /// <param name="e"></param>
         private void button4_Click(object sender, EventArgs e)
         {
-            
+            operation = '>';
+
+            display.Text = "Enter in a,b,c values seperated by spaces. Then hit '='";
         }
 
         /// <summary>

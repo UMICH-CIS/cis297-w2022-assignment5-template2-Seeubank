@@ -71,13 +71,15 @@
             // 
             // equalButton
             // 
+            this.equalButton.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.equalButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.equalButton.Location = new System.Drawing.Point(328, 307);
+            this.equalButton.Location = new System.Drawing.Point(355, 247);
             this.equalButton.Margin = new System.Windows.Forms.Padding(0);
             this.equalButton.Name = "equalButton";
-            this.equalButton.Size = new System.Drawing.Size(133, 50);
+            this.equalButton.Size = new System.Drawing.Size(201, 109);
             this.equalButton.TabIndex = 32;
             this.equalButton.Text = "=";
+            this.equalButton.UseVisualStyleBackColor = false;
             this.equalButton.Click += new System.EventHandler(this.equalButton_Click);
             // 
             // decimalButton
@@ -149,7 +151,7 @@
             // muliplicationButton
             // 
             this.muliplicationButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.muliplicationButton.Location = new System.Drawing.Point(253, 188);
+            this.muliplicationButton.Location = new System.Drawing.Point(253, 131);
             this.muliplicationButton.Margin = new System.Windows.Forms.Padding(0);
             this.muliplicationButton.Name = "muliplicationButton";
             this.muliplicationButton.Size = new System.Drawing.Size(63, 50);
@@ -193,7 +195,7 @@
             // divideButton
             // 
             this.divideButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.divideButton.Location = new System.Drawing.Point(253, 130);
+            this.divideButton.Location = new System.Drawing.Point(253, 189);
             this.divideButton.Margin = new System.Windows.Forms.Padding(0);
             this.divideButton.Name = "divideButton";
             this.divideButton.Size = new System.Drawing.Size(63, 50);
@@ -240,13 +242,13 @@
             this.display.Location = new System.Drawing.Point(12, 13);
             this.display.Multiline = true;
             this.display.Name = "display";
-            this.display.Size = new System.Drawing.Size(449, 36);
+            this.display.Size = new System.Drawing.Size(567, 36);
             this.display.TabIndex = 17;
             // 
             // squareRootButton
             // 
             this.squareRootButton.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.squareRootButton.Location = new System.Drawing.Point(398, 249);
+            this.squareRootButton.Location = new System.Drawing.Point(493, 185);
             this.squareRootButton.Name = "squareRootButton";
             this.squareRootButton.Size = new System.Drawing.Size(63, 49);
             this.squareRootButton.TabIndex = 34;
@@ -257,7 +259,7 @@
             // log10Button
             // 
             this.log10Button.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.log10Button.Location = new System.Drawing.Point(328, 131);
+            this.log10Button.Location = new System.Drawing.Point(355, 130);
             this.log10Button.Name = "log10Button";
             this.log10Button.Size = new System.Drawing.Size(63, 49);
             this.log10Button.TabIndex = 35;
@@ -268,7 +270,7 @@
             // logxButton
             // 
             this.logxButton.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.logxButton.Location = new System.Drawing.Point(328, 189);
+            this.logxButton.Location = new System.Drawing.Point(355, 185);
             this.logxButton.Name = "logxButton";
             this.logxButton.Size = new System.Drawing.Size(63, 49);
             this.logxButton.TabIndex = 36;
@@ -279,7 +281,7 @@
             // quadraticRootsButton
             // 
             this.quadraticRootsButton.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.quadraticRootsButton.Location = new System.Drawing.Point(328, 248);
+            this.quadraticRootsButton.Location = new System.Drawing.Point(493, 130);
             this.quadraticRootsButton.Name = "quadraticRootsButton";
             this.quadraticRootsButton.Size = new System.Drawing.Size(63, 49);
             this.quadraticRootsButton.TabIndex = 37;
@@ -301,7 +303,7 @@
             // reverseButton
             // 
             this.reverseButton.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.reverseButton.Location = new System.Drawing.Point(138, 69);
+            this.reverseButton.Location = new System.Drawing.Point(159, 66);
             this.reverseButton.Name = "reverseButton";
             this.reverseButton.Size = new System.Drawing.Size(109, 49);
             this.reverseButton.TabIndex = 39;
@@ -312,7 +314,7 @@
             // removeSpaceButton
             // 
             this.removeSpaceButton.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.removeSpaceButton.Location = new System.Drawing.Point(253, 68);
+            this.removeSpaceButton.Location = new System.Drawing.Point(283, 66);
             this.removeSpaceButton.Name = "removeSpaceButton";
             this.removeSpaceButton.Size = new System.Drawing.Size(135, 49);
             this.removeSpaceButton.TabIndex = 40;
@@ -323,7 +325,7 @@
             // minmaxButton
             // 
             this.minmaxButton.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.minmaxButton.Location = new System.Drawing.Point(397, 130);
+            this.minmaxButton.Location = new System.Drawing.Point(424, 130);
             this.minmaxButton.Name = "minmaxButton";
             this.minmaxButton.Size = new System.Drawing.Size(63, 49);
             this.minmaxButton.TabIndex = 41;
@@ -334,9 +336,9 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(18, 69);
+            this.button1.Location = new System.Drawing.Point(18, 66);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(111, 49);
+            this.button1.Size = new System.Drawing.Size(126, 49);
             this.button1.TabIndex = 42;
             this.button1.Text = "quotient remainder";
             this.button1.UseVisualStyleBackColor = false;
@@ -345,7 +347,7 @@
             // powerButton
             // 
             this.powerButton.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.powerButton.Location = new System.Drawing.Point(398, 188);
+            this.powerButton.Location = new System.Drawing.Point(424, 185);
             this.powerButton.Name = "powerButton";
             this.powerButton.Size = new System.Drawing.Size(63, 49);
             this.powerButton.TabIndex = 43;
@@ -356,9 +358,9 @@
             // spaceButton
             // 
             this.spaceButton.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.spaceButton.Location = new System.Drawing.Point(398, 69);
+            this.spaceButton.Location = new System.Drawing.Point(433, 66);
             this.spaceButton.Name = "spaceButton";
-            this.spaceButton.Size = new System.Drawing.Size(62, 47);
+            this.spaceButton.Size = new System.Drawing.Size(123, 49);
             this.spaceButton.TabIndex = 44;
             this.spaceButton.Text = "space";
             this.spaceButton.UseVisualStyleBackColor = false;
@@ -368,7 +370,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(473, 375);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(592, 375);
             this.Controls.Add(this.spaceButton);
             this.Controls.Add(this.powerButton);
             this.Controls.Add(this.button1);
